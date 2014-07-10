@@ -6,3 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
+
+textarea {
+  width: 300px;
+  height:300px;
+  line-height;
+  float: left;
+  margin-left;
+}
+
+input[type=text]{
+  width: 50px;
+}

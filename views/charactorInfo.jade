@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1 캐릭터 설정 페이지
+  div.info
+  form(name="input", action="/charactorInfo", method="post")
+    table
+      tr
+        td MoveSpeed:
+        td
+          input(type="text", name="moveSpeed", value=info.moveSpeed)
+      tr
+        td Dig Damage:
+        td
+          input(type="text", name="digDamage", value=info.digDamage)
+      tr
+        td Dig Interval:
+        td
+          input(type="text", name="digInterval", value=info.digInterval)
+          
+      tr
+        td Dig Item1Cnt:
+        td
+          input(type="text", name="digInterval", value=info.Item1Cnt)
+          
+      tr
+        td Dig Item2Cnt:
+        td
+          input(type="text", name="digInterval", value=info.Item2Cnt)
+      tr
+        td Dig Item3Cnt:
+        td
+          input(type="text", name="digInterval", value=info.Item3Cnt)
+      tr
+        td
+          if(info._id != undefined)
+            input( type="hidden", name="_id", value=info._id.toHexString())
+        td
+          input(type="submit", value="Submit")

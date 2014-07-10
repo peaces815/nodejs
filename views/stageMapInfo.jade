@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  h1= 'stage ' + info.stage + ' 설정 페이지'
+  p
+  
+  div.info
+  form(name="input", action="/stageMapInfo", method="post")
+    if(info._id != undefined)
+      input( type="hidden", name="_id", value=info._id.toHexString())  
+    input( type="hidden", name="stage", value=info.stage)
+    table
+      tr
+        td playTime:
+        td
+          input(type="text", name="playTime", value=info.playTime)
+      tr
+        td ariCnt:
+        td
+          input(type="text", name="ariCnt", value=info.ariCnt)
+      tr
+        td ariSpeed:
+        td
+          input(type="text", name="ariSpeed", value=info.ariSpeed)
+      tr
+        td ariStartTime:
+        td
+          input(type="text", name="ariStartTime", value=info.ariStartTime)
+          
+      tr
+        td pangCnt:
+        td
+          input(type="text", name="pangCnt", value=info.pangCnt)
+          
+      tr
+        td pangSpeed:
+        td
+          input(type="text", name="pangSpeed", value=info.pangSpeed)
+      tr
+        td pangStartTime:
+        td
+          input(type="text", name="pangStartTime", value=info.pangStartTime)
+    p
+    
+    table          
+      tr    
+        td width:
+           input(type="text", name="width", value=info.width)
+        td height:
+           input(type="text", name="height", value=info.height)
+    P       
+    
+    // table      
+    //   each mapRow in info.mapInfoList
+    //     tr
+    //       each mapCol in mapRow
+    //         td  
+    //           input(type="text", name="mapInfo[]", value=mapCol)
+    
+    P
+    
+    table          
+      tr    
+        td 
+          textarea(name="mapInfo", rows=20, id="mapInfo")
+            = info.mapInfo
+      tr
+        td
+          input(type="submit", value="Submit")
+
